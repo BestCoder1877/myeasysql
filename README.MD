@@ -4,10 +4,10 @@ MyEasySQL is a simple Python library to interact with MySQL databases. It provid
 
 ## Installation
 
-To install the required MySQL connector, run:
+To install myeasysql, run:
 
 ```bash
-pip install mysql-connector-python
+pip install myeasysql
 ```
 
 ## Usage
@@ -17,9 +17,9 @@ pip install mysql-connector-python
 Use the `connect` function to establish a connection to the MySQL database:
 
 ```python
-from myeasysql import main
+import myeasysql as sql
 
-cnx = main.connect(host='your_host', user='your_user', password='your_password', database='your_database')
+cnx = sql.connect(host='your_host', user='your_user', password='your_password', database='your_database')
 ```
 
 ### Executing a Command
@@ -27,7 +27,7 @@ cnx = main.connect(host='your_host', user='your_user', password='your_password',
 Use the `command` function to execute a query and fetch results:
 
 ```python
-result = main.command(cnx, 'SELECT * FROM your_table')
+result = sql(cnx, 'your_command')
 print(result)
 ```
 
@@ -45,7 +45,7 @@ print(column_data)
 Use the `getCell` function to retrieve a specific cell value from a table:
 
 ```python
-cell_value = main.getCell(cnx, 'your_table', 'your_column', rowIndex=1)
+cell_value = main.getCell(cnx, 'your_table', 'your_column', 1)
 print(cell_value)
 ```
 
@@ -55,7 +55,3 @@ print(cell_value)
 - `command(cnx, query)`: Executes a query and returns the results.
 - `getColumn(cnx, table, column)`: Retrieves all values from a specific column.
 - `getCell(cnx, table, column, rowIndex)`: Retrieves a specific cell value from a table.
-
-## License
-
-This project is licensed under the MIT License.

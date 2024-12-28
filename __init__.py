@@ -1,1 +1,1 @@
-from .main import isEven,connect,command,getColumn,getCell
+from .main import isEven, connect, command, getColumn, getCell, getRow, getLength, rawCommand
